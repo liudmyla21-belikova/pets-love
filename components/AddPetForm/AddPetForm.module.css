@@ -1,0 +1,178 @@
+.box {
+  border-radius: 30px;
+  max-width: 335px;
+  background-color: #fff;
+  padding: 28px 20px 20px;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #262626;
+  margin-bottom: 24px;
+}
+
+.title span {
+  font-size: 14px;
+  color: rgba(38, 38, 38, 0.4);
+}
+
+.sexBox {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.sexIconBox {
+  border-radius: 30px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.sexIconBoxFemale {
+  background-color: rgba(244, 63, 94, 0.1);
+  stroke: #f43f5e;
+  fill: none;
+}
+.sexIconBoxMale {
+  background-color: rgba(84, 173, 255, 0.1);
+  stroke: #54adff;
+  fill: none;
+}
+.sexIconBoxUnknown {
+  background-color: #fff4df;
+  fill: #f6b83d;
+}
+
+.sexInput {
+  display: none;
+}
+.sexInput:checked + .sexIconBox {
+  background-color: currentColor;
+  stroke: #fff;
+  fill: #fff;
+}
+.sexInput:checked + .sexIconBoxFemale {
+  background-color: #f43f5e;
+}
+.sexInput:checked + .sexIconBoxMale {
+  background-color: #54adff;
+}
+.sexInput:checked + .sexIconBoxUnknown {
+  background-color: #f6b83d;
+}
+
+.iconBox {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background-color: #fff4df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  overflow: hidden;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photoUploadWrapper {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.uploadLabelBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff4df;
+  padding: 12px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.uploadIcon {
+  stroke: #f6b83d;
+  fill: none;
+}
+.hiddenInput {
+  display: none;
+}
+
+.inputsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 12px 16px;
+  font-size: 14px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #f6b83d;
+}
+
+.rowInputs {
+  display: flex;
+  gap: 10px;
+}
+
+.dateInput {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23f6b83d' stroke-width='2'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E")
+    no-repeat right 16px center;
+}
+
+.btnsBox {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.btnBack {
+  background-color: rgba(38, 38, 38, 0.05);
+  color: #262626;
+}
+.btnSubmit {
+  background-color: #f6b83d;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .box {
+    max-width: 704px;
+    padding: 40px 136px;
+    border-radius: 60px;
+  }
+  .title {
+    font-size: 32px;
+  }
+}

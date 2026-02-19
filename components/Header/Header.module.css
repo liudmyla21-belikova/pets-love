@@ -1,0 +1,537 @@
+.container {
+    max-width: 100%;
+    width: 100%;
+    padding: 10px 20px 20px;
+    margin: 0 auto;
+}
+
+.containerHome {
+    max-width: 100%;
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: -102px;
+    z-index: 5;
+}
+
+.container {
+    max-width: 375px;
+    padding: 10px
+}
+
+.containerHome {
+    max-width: 375px;
+    padding: 10px 20px 20px;
+
+}
+
+.header {
+    padding: 18px 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.headerHome {
+    padding: 18px 20px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.logo,
+.logoHome {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: #262626;
+    margin-right: auto;
+}
+
+.logoHome {
+    color: #fff;
+}
+
+.icon {
+    width: 17px;
+    height: 17px;
+    fill: #f6b83d;
+    vertical-align: middle;
+}
+
+.iconHome {
+    width: 17px;
+    height: 17px;
+    fill: #fff;
+    vertical-align: middle;
+}
+
+.navList {
+    display: none;
+}
+
+.navListHome {
+    display: none;
+}
+
+.auth {
+    display: none;
+}
+
+.btn {
+    padding: 0;
+    margin-left: 12px;
+}
+
+.btnHome {
+    padding: 0;
+    margin-left: 12px;
+}
+
+.burger {
+    width: 32px;
+    height: 32px;
+    stroke: #262626;
+}
+
+.burgerHome {
+    width: 32px;
+    height: 32px;
+    stroke: #fff;
+}
+
+.userContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.avatar {
+    border-radius: 100%;
+}
+
+.userIconBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #fff4df;
+    padding: 0;
+}
+
+.userIcon {
+    stroke: #f6b83d;
+    fill: #f6b83d;
+}
+
+.logoutBtn,
+.userName,
+.logoutBtnHome {
+    display: none;
+}
+
+
+.userNameHome {
+    display: none;
+}
+
+@media screen and (min-width: 375px) {
+    .container {
+        max-width: 375px;
+        padding: 10px 20px 20px;
+    }
+
+    .containerHome {
+        max-width: 375px;
+        padding: 10px 20px 20px;
+        margin-bottom: -102px;
+        z-index: 5;
+    }
+
+    .header {
+        padding: 18px 0;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+    }
+
+    .headerHome {
+        padding: 18px 20px;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo,
+    .logoHome {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        color: #262626;
+        margin-right: auto;
+    }
+
+    .logoHome {
+        color: #fff;
+    }
+
+    .icon {
+        width: 17px;
+        height: 17px;
+        fill: #f6b83d;
+        vertical-align: middle;
+    }
+
+    .iconHome {
+        width: 17px;
+        height: 17px;
+        fill: #fff;
+        vertical-align: middle;
+    }
+
+    .navList {
+        display: none;
+    }
+
+    .navListHome {
+        display: none;
+    }
+
+    .auth {
+        display: none;
+    }
+
+    .btn {
+        padding: 0;
+        margin-left: 12px;
+    }
+
+    .btnHome {
+        padding: 0;
+        margin-left: 12px;
+    }
+
+    .burger {
+        width: 32px;
+        height: 32px;
+        stroke: #262626;
+    }
+
+    .burgerHome {
+        width: 32px;
+        height: 32px;
+        stroke: #fff;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+        padding: 16px 32px 32px;
+    }
+
+    .containerHome {
+        max-width: 768px;
+        padding: 16px 32px 32px;
+        margin-bottom: -132px;
+        z-index: 5;
+    }
+
+    .header {
+        padding: 16px 0;
+        background-color: transparent;
+    }
+
+    .headerHome {
+        padding: 16px 32px;
+        background-color: transparent;
+    }
+
+    .logo {
+        font-size: 28px;
+        margin-right: 0;
+    }
+
+    .logoHome {
+        font-size: 28px;
+        margin-right: 0;
+    }
+
+    .icon {
+        width: 23px;
+        height: 23px;
+    }
+
+    .iconHome {
+        width: 23px;
+        height: 23px;
+    }
+
+
+    .navListHome {
+        display: none;
+    }
+
+    .auth {
+        display: flex;
+        gap: 8px;
+        margin-left: auto;
+    }
+
+    .login,
+    .loginHome,
+    .register,
+    .registerHome {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        padding: 15px 35px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: -0.03em;
+        background-color: #f6b83d;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .register,
+    .registerHome {
+        padding: 15px 20px;
+    }
+
+    .loginHome:hover,
+    .registerHome:hover {
+        color: #f6b83d;
+        background-color: #fff4df;
+    }
+
+    .login,
+    .register {
+        color: #f6b83d;
+        background-color: #fff4df;
+    }
+
+    .login:hover,
+    .register:hover {
+        background-color: #f6b83d;
+        color: #fff;
+    }
+
+    .btn {
+        margin-left: 16px;
+    }
+
+    .btnHome {
+        margin-left: 18px;
+    }
+
+    .burger {
+        width: 36px;
+        height: 36px;
+    }
+
+    .burgerHome {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .userContainer {
+        gap: 8px;
+    }
+
+    .avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logoutBtn,
+    .logoutBtnHome {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 136px;
+        height: 50px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: -0.03em;
+        color: #f6b83d;
+        background-color: #fff4df;
+    }
+
+    .logoutBtn:hover {
+        color: #fff;
+        background-color: #f6b83d;
+    }
+
+    .logoutBtnHome {
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+        background-color: #f6b83d;
+    }
+
+    .logoutBtnHome:hover {
+        color: #f6b83d;
+        background-color: #fff4df;
+    }
+
+    .userIconBox {
+        width: 50px;
+        height: 50px;
+    }
+
+    .userIcon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .userName,
+    .userNameHome {
+        display: block;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: #262626;
+    }
+
+    .userNameHome {
+        color: #fff;
+    }
+
+    .profileLink {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+
+    .containerHome {
+        max-width: 1280px;
+        margin-bottom: -134px;
+        z-index: 5;
+    }
+
+    .header {
+        padding: 16px 32px 32px;
+    }
+
+    .headerHome {
+        padding: 16px 64px;
+    }
+
+
+    .navList {
+        display: flex;
+        margin-left: 313px;
+        gap: 10px;
+    }
+
+    .navListHome {
+        display: flex;
+        margin-left: 280px;
+        gap: 10px;
+    }
+
+    .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(38, 38, 38, 0.15);
+        border-radius: 30px;
+        padding: 15px 20px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: -0.03em;
+        color: #262626;
+    }
+
+
+    .linkHome {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 30px;
+        padding: 15px 20px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: -0.03em;
+        color: #fff;
+    }
+
+    .link:hover {
+        background-color: #f6b83d;
+        color: #fff;
+    }
+
+    .linkHome:hover {
+        background-color: #fff4df;
+        color: #f6b83d;
+    }
+
+    .active {
+        border: 1px solid #f6b83d;
+    }
+
+    .auth {
+        display: flex;
+        gap: 8px;
+        margin-left: auto;
+    }
+
+    .login,
+    .loginHome,
+    .register,
+    .registerHome {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        padding: 15px 35px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: -0.03em;
+        color: #f6b83d;
+        background-color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .register,
+    .registerHome {
+        padding: 15px 20px;
+    }
+
+    .loginHome,
+    .registerHome {
+        background-color: #f6b83d;
+        color: #fff4df;
+    }
+
+
+    .btn {
+        display: none;
+    }
+
+    .btnHome {
+        display: none;
+    }
+}

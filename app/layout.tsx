@@ -1,0 +1,43 @@
+import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
+import "./globals.css";
+import Header from "@/components/Header/Header";
+import Loader from "@/components/Loader/Loader";
+import { LoaderProvider } from "@/providers/LoaderContext";
+import TanStackProvider from "@/providers/TanStackProvider";
+import AuthProvider from "@/components/AuthProvider/AuthProvider";
+
+const geistManrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["500", "600", "700", "800"],
+});
+
+export const metadata: Metadata = {
+  title: "Pet Love",
+  description: "Pets search application",
+  icons: { icon: "/public/Favicon.png" },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <AuthProvider>
+        <TanStackProvider>
+          <LoaderProvider>
+            <body className={`${geistManrope.variable} `}>
+              <Header />
+              <Loader />
+              {children}
+            </body>
+          </LoaderProvider>
+        </TanStackProvider>
+      </AuthProvider>
+    </html>
+  );
+}

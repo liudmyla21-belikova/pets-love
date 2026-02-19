@@ -1,0 +1,146 @@
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.label {
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    border: 1px solid rgba(38, 38, 38, 0.15);
+    border-radius: 30px;
+    padding: 12px;
+    width: 100%;
+    height: 42px;
+    outline: none;
+}
+
+.input::placeholder {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    color: rgba(38, 38, 38, 0.5);
+}
+
+.input:focus {
+    border-color: #f6b83d;
+}
+
+.inputError {
+    border-color: #ef2447;
+}
+
+.inputSuccess {
+    border-color: #08aa83;
+}
+
+.eye {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    stroke: #f6b83d;
+    fill: #fff;
+}
+
+.eye:hover {
+    cursor: pointer;
+}
+
+.check {
+    position: absolute;
+    top: 12px;
+    right: 38px;
+    stroke: #08aa83;
+    fill: #fff;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 295px;
+    height: 42px;
+    background-color: #f6b83d;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin: 30px 0 2px;
+}
+
+.text,
+.link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: -0.03em;
+    color: rgba(38, 38, 38, 0.5);
+}
+
+.link {
+    font-weight: 700;
+    color: #f6b83d;
+}
+
+.success {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: #08aa83;
+    padding-top: 2px;
+}
+
+@media screen and (min-width:768px) {
+
+
+    .form {
+        gap: 16px;
+    }
+
+    .input::placeholder {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    .input {
+        height: 52px;
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    .eye,
+    .check {
+        width: 22px;
+        height: 22px;
+        top: 15px;
+        right: 15px;
+    }
+
+    .check {
+        right: 50px;
+    }
+
+    .btn {
+        margin: 48px 0 0;
+        font-size: 16px;
+        width: 424px;
+    }
+
+    .text,
+    .link {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+@media screen and (min-width:1280px) {}
