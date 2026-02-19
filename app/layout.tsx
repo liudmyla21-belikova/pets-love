@@ -17,7 +17,9 @@ const geistManrope = Manrope({
 export const metadata: Metadata = {
   title: "Pet Love",
   description: "Pets search application",
-  icons: { icon: "/public/Favicon.png" },
+  icons: {
+    icon: "/favicon.png?v=1",
+  },
 };
 
 export default function RootLayout({

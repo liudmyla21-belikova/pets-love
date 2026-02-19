@@ -80,8 +80,8 @@ export default function AddPetForm() {
         name: data.name,
         species: data.species,
         sex: data.sex,
-        birthday: data.birthday, // має бути формат YYYY-MM-DD
-        imgURL: "https://test.webp", // посилання, як у документації
+        birthday: data.birthday,
+        imgURL: "https://test.webp",
       };
 
       await addMyPet(payload);
@@ -210,6 +210,16 @@ export default function AddPetForm() {
                 <option value="cat">Cat</option>
                 <option value="monkey">Monkey</option>
                 <option value="bird">Bird</option>
+                <option value="snake">Snake</option>
+                <option value="turtle">Turtle</option>
+                <option value="lizard">Lizard</option>
+                <option value="frog">Frog</option>
+                <option value="fish">Fish</option>
+                <option value="ants">Ants</option>
+                <option value="bees">Bees</option>
+                <option value="butterfly">Butterfly</option>
+                <option value="spider">Spider</option>
+                <option value="scorpion">Scorpion</option>
               </select>
               {errors.species && (
                 <p className={css.errorText}>{errors.species.message}</p>

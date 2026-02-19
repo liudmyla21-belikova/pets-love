@@ -87,7 +87,6 @@ export default function EditUserProfileModalComponent({ onClose }: Props) {
       </button>
       <h3 className={css.title}>Edit information</h3>
       <form onSubmit={handleSubmit(onSubmit)} className={css.editForm}>
-        {/* Avatar preview */}
         {avatarValue && (
           <Image
             src={avatarValue}
