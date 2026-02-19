@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Pet Love",
   description: "Pets search application",
   icons: {
-    icon: "/favicon.png?v=1",
+    icon: "/favicon.png?v=2",
   },
 };
 
