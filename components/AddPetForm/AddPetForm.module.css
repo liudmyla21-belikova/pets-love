@@ -28,12 +28,17 @@
 
 .sexIconBox {
   border-radius: 30px;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+}
+
+.sexIconBox svg {
+  width: 24px;
+  height: 24px;
 }
 
 .sexIconBoxFemale {
@@ -89,13 +94,18 @@
 
 .photoUploadWrapper {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   margin-bottom: 16px;
+  width: 100%;
 }
 
 .uploadLabelBtn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background-color: #fff4df;
   padding: 12px 16px;
@@ -104,12 +114,18 @@
   font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
+  margin: 0 auto;
 }
 
-.uploadIcon {
-  stroke: #f6b83d;
-  fill: none;
+.fileNameText {
+  font-size: 12px;
+  color: rgba(38, 38, 38, 0.5);
+  text-align: center;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .hiddenInput {
   display: none;
 }
@@ -118,6 +134,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.catFoot {
+  fill: #f6b83d;
 }
 
 .input {
@@ -131,6 +151,14 @@
 
 .input:focus {
   border-color: #f6b83d;
+}
+
+.uploadIcon {
+  width: 18px;
+  height: 18px;
+  color: #f6b83d;
+  fill: none;
+  display: block;
 }
 
 .rowInputs {

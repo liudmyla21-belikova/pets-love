@@ -9,6 +9,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { addMyPet } from "@/lib/api/serverApi";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { uploadAvatar } from "@/lib/cloudinary/cloudinary";
 
 interface IFormInput {
   title: string;
@@ -56,6 +57,7 @@ export default function AddPetForm() {
     handleSubmit,
     formState: { errors, isSubmitting },
     watch,
+    setValue,
   } = useForm<IFormInput>({
     resolver: yupResolver(addPetSchema) as any,
   });
@@ -63,30 +65,42 @@ export default function AddPetForm() {
   const fileWatcher = watch("imgURL");
 
   useEffect(() => {
-    if (fileWatcher && fileWatcher.length > 0) {
+    if (
+      fileWatcher &&
+      fileWatcher instanceof FileList &&
+      fileWatcher.length > 0
+    ) {
       const file = fileWatcher[0];
-      if (file instanceof File) {
-        const url = URL.createObjectURL(file);
-        setPreview(url);
-        return () => URL.revokeObjectURL(url);
-      }
+      const url = URL.createObjectURL(file);
+      setPreview(url);
+      return () => URL.revokeObjectURL(url);
     }
   }, [fileWatcher]);
 
   const onSubmit = async (data: IFormInput) => {
     try {
+      let cloudinaryUrl = "";
+
+      if (data.imgURL && data.imgURL[0] instanceof File) {
+        toast.loading("Uploading image...", { id: "upload" });
+        cloudinaryUrl = await uploadAvatar(data.imgURL[0]);
+        toast.success("Image uploaded!", { id: "upload" });
+      }
+
       const payload = {
         title: data.title,
         name: data.name,
         species: data.species,
         sex: data.sex,
         birthday: data.birthday,
-        imgURL: "https://test.webp",
+        imgURL: cloudinaryUrl,
       };
 
       await addMyPet(payload);
       toast.success("Pet added!");
+      router.push("/profile");
     } catch (error: any) {
+      toast.error("Failed to add pet");
       console.log("Error details:", error.response?.data);
     }
   };
@@ -132,7 +146,7 @@ export default function AddPetForm() {
                 unoptimized
               />
             ) : (
-              <svg width={34} height={34}>
+              <svg width={34} height={34} className={css.catFoot}>
                 <use href="/symbol-defs.svg#cat-footprint" />
               </svg>
             )}
@@ -140,17 +154,11 @@ export default function AddPetForm() {
         </div>
 
         <div className={css.photoUploadWrapper}>
-          <input
-            className={css.input}
-            placeholder="Enter URL"
-            value={
-              (typeof window !== "undefined" &&
-                fileWatcher instanceof FileList &&
-                fileWatcher[0]?.name) ||
-              ""
-            }
-            readOnly
-          />
+          {fileWatcher && fileWatcher.length > 0 && (
+            <p className={css.fileNameText}>
+              File selected: <span>{fileWatcher[0]?.name}</span>
+            </p>
+          )}
           <label className={css.uploadLabelBtn}>
             <span>Upload photo</span>
             <input
@@ -159,8 +167,13 @@ export default function AddPetForm() {
               className={css.hiddenInput}
               {...register("imgURL")}
             />
-            <svg width={18} height={18} className={css.uploadIcon}>
-              <use href="/symbol-defs.svg#upload" />
+            <svg
+              width={18}
+              height={18}
+              className={css.uploadIcon}
+              aria-hidden="true"
+            >
+              <use href="/symbol-defs.svg#icon-upload" />
             </svg>
           </label>
         </div>

@@ -1,29 +1,32 @@
-'use client';
+"use client";
 
-import css from './EditUserProfileModalComponent.module.css';
-import * as Yup from 'yup';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useAuthStore } from '@/lib/store/AuthStore';
-import Image from 'next/image';
-import toast, { Toaster } from 'react-hot-toast';
-import { editUser } from '@/lib/api/serverApi';
+import css from "./EditUserProfileModalComponent.module.css";
+import * as Yup from "yup";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useAuthStore } from "@/lib/store/AuthStore";
+import Image from "next/image";
+import toast, { Toaster } from "react-hot-toast";
+import { editUser } from "@/lib/api/serverApi";
 
 export const editUserSchema = Yup.object({
   name: Yup.string(),
 
   email: Yup.string().matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, {
-    message: 'Invalid email format',
+    message: "Invalid email format",
     excludeEmptyString: true,
   }),
 
-  avatar: Yup.string().matches(/^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/, {
-    message: 'Avatar must be valid image URL',
-    excludeEmptyString: true,
-  }),
+  avatar: Yup.string().matches(
+    /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/,
+    {
+      message: "Avatar must be valid image URL",
+      excludeEmptyString: true,
+    }
+  ),
 
   phone: Yup.string().matches(/^\+38\d{10}$/, {
-    message: 'Phone must be in format +380XXXXXXXXX',
+    message: "Phone must be in format +380XXXXXXXXX",
     excludeEmptyString: true,
   }),
 });
@@ -46,14 +49,14 @@ export default function EditUserProfileModalComponent({ onClose }: Props) {
   } = useForm({
     resolver: yupResolver(editUserSchema),
     defaultValues: {
-      name: user?.name || '',
-      email: user?.email || '',
-      avatar: user?.avatar || '',
-      phone: user?.phone || '',
+      name: user?.name || "",
+      email: user?.email || "",
+      avatar: user?.avatar || "",
+      phone: user?.phone || "",
     },
   });
 
-  const avatarValue = watch('avatar');
+  const avatarValue = watch("avatar");
 
   const onSubmit = async (data: FormValues) => {
     if (!user) return;
@@ -68,12 +71,12 @@ export default function EditUserProfileModalComponent({ onClose }: Props) {
     try {
       const res = await editUser(payload);
       setUser(res);
-      toast('Profile updated successfully');
+      toast("Profile updated successfully");
       setTimeout(() => {
         onClose();
       }, 1500);
     } catch (error: any) {
-      toast.error(error?.response?.data?.message || 'Failed to update profile');
+      toast.error(error?.response?.data?.message || "Failed to update profile");
     }
   };
 
@@ -97,19 +100,31 @@ export default function EditUserProfileModalComponent({ onClose }: Props) {
           />
         )}
 
-        <input {...register('avatar')} />
+        <input {...register("avatar")} />
         {errors.avatar && <p>{errors.avatar.message}</p>}
 
-        <input {...register('name')} />
+        <input {...register("name")} placeholder="Name" className={css.input} />
         {errors.name && <p>{errors.name.message}</p>}
 
-        <input {...register('email')} />
+        <input
+          {...register("email")}
+          placeholder="Email"
+          className={css.input}
+        />
         {errors.email && <p>{errors.email.message}</p>}
 
-        <input {...register('phone')} />
+        <input
+          {...register("phone")}
+          placeholder="+380"
+          className={css.input}
+        />
         {errors.phone && <p>{errors.phone.message}</p>}
 
-        <button className={css.submitBtn} type="submit" disabled={!isDirty || isSubmitting}>
+        <button
+          className={css.submitBtn}
+          type="submit"
+          disabled={!isDirty || isSubmitting}
+        >
           Save
         </button>
       </form>
